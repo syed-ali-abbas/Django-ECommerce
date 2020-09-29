@@ -1,0 +1,38 @@
+{% extends 'index.html' %}
+
+{% block content %}
+
+<div class="container-fluid mt-5">
+    
+        <div class="row">
+            <div class="col-lg-2 mx-auto">
+                <div class="list-group">
+                    <a href="/" class="list-group-item list-group-item-action">All Items</a>
+                    {% for cat in category %}
+                    <a href="/?category={{cat.id}}" class="list-group-item list-group-item-action">{{cat.name}}</a>
+                    {% endfor %}
+
+                </div>
+            </div>
+            <div class="col-lg-10" id="products">
+            <div class="row mx-auto">
+                {% for prod in products %}
+                <div class="card mx-auto my-3" style="width: 18rem;">
+                    <img src="{{prod.Image.url}}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h6 class="card-title"><b>Name: </b>{{prod.name}}</h6>
+                        <p class="card-text"><b>Price: </b>{{prod.price}}</p>
+                        <!--          <span>{{prod.Image.url}}</span>-->
+                        <a href="#" class="btn btn-primary">Add To Cart</a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+            
+    </div>
+
+
+</div>
+
+{% endblock content %}
