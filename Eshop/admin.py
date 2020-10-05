@@ -2,7 +2,7 @@ from django.contrib import admin
 from .models.Product import Product
 from .models.Category import Category
 from .models.Customer import Customer
-
+from .models.order import Order
 
 # Register your models here.
 
@@ -17,3 +17,4 @@ class AdminCategoryTab(admin.ModelAdmin):
 admin.site.register(Product, AdminProductTab)
 admin.site.register(Category, AdminCategoryTab)
 admin.site.register(Customer)
+admin.site.register(Order)

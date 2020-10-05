@@ -19,14 +19,24 @@
 
 <ul style="float:right" class="nav nav-tabs mx-5">
     <li class="nav-item">
-        <a class="nav-link" href="#">Sign Out</a>
+        <a class="nav-link" href="/cart">Cart</a>
     </li>
+    {% if request.session.customer_id %}
+     <li class="nav-item">
+        <a class="nav-link" href="/orders">Orders</a>
+    </li>
+     <li class="nav-item">
+        <a class="nav-link" href="/signout">Sign Out</a>
+    </li>
+    {% else %}
+    
      <li class="nav-item">
         <a class="nav-link" href="/signin">Login</a>
     </li>
      <li class="nav-item">
         <a class="nav-link" href="/signup">Sign Up</a>
     </li>
+    {% endif %}
     <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
            aria-expanded="false">Dropdown</a>
