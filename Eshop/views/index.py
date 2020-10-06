@@ -2,9 +2,12 @@ from django.shortcuts import render, redirect
 from Eshop.models.Product import Product
 from Eshop.models.Category import Category
 from django.views import View
+from Eshop.middlewares.auth import auth_middleware
+from django.utils.decorators import method_decorator
 
 
 class Index(View):
+    @method_decorator(auth_middleware)
     def post(self, request):
         product = request.POST.get('product')
         remove = request.POST.get('remove')
@@ -28,6 +31,7 @@ class Index(View):
         request.session['cart'] = cart
         return redirect('home')
 
+    
     def get(self, request):
         cart = request.session.get('cart')
         if not cart:

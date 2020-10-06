@@ -19,7 +19,7 @@
 
 <ul style="float:right" class="nav nav-tabs mx-5">
     <li class="nav-item">
-        <a class="nav-link" href="/cart">Cart</a>
+        <a class="nav-link" href="/cart">Cart <span class="badge badge-info">{{request.session.cart.keys|length}}</span></a>
     </li>
     {% if request.session.customer_id %}
      <li class="nav-item">

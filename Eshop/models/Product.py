@@ -4,7 +4,7 @@ from .Category import Category
 
 class Product(models.Model):
     name = models.CharField(max_length=850)
-    price = models.IntegerField(default=0)
+    price = models.IntegerField (default=0)
     description = models.CharField(max_length=200, default='')
     category_ID = models.ForeignKey(Category, on_delete=models.CASCADE, default=1)
     Image = models.ImageField(upload_to='products/')
