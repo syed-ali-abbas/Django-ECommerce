@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '-#!)qw9qvk6q_vxcqc_5%_7&k4krg@m0mh_h=rof_7i$h(bp1('
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -55,7 +55,7 @@ ROOT_URLCONF = 'ECommerce.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR,'templates')],
+        'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -117,6 +117,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+# MEDIA_URL = '/image/products/'
 MEDIA_URL = '/image/products/express/setting/'
 
 MEDIA_ROOT = BASE_DIR
