@@ -10,4 +10,4 @@ class orders(View):
     def get(self, request):
         customer = request.session.get('customer_id')
         orders = Order.get_orders_by_customer(customer)
-        return render(request, 'orders.html',{'orders':orders})
+        return render(request, 'Orders.html',{'orders':orders})
