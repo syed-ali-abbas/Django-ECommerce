@@ -15,11 +15,11 @@ class SignUp(View):
         error_msg = None
         if not obj.first_name:
             error_msg = 'First Name is required'
-        elif len(obj.first_name) < 5:
+        elif len(obj.first_name) < 3:
             error_msg = 'First Name length should be smaller than 5'
         elif not obj.last_name:
             error_msg = 'Last Name is required'
-        elif len(obj.last_name) < 5:
+        elif len(obj.last_name) < 3:
             error_msg = 'Last Name length should be smaller than 5'
         elif not obj.password:
             error_msg = 'Password Required'
@@ -27,8 +27,8 @@ class SignUp(View):
             error_msg = 'Password Characters Should be greater than 8'
         elif not obj.phone:
             error_msg = 'Phone Number required'
-        elif len(obj.phone) < 15:
-            error_msg = 'Phone Number length 15 digits required'
+        elif len(obj.phone) < 11:
+            error_msg = 'Phone Number length 11 digits required'
         elif not obj.email:
             error_msg = 'Email Required'
         elif len(obj.email) < 5:
