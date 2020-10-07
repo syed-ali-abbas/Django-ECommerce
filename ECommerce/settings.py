@@ -122,3 +122,4 @@ MEDIA_URL = '/image/products/express/setting/'
 MEDIA_ROOT = BASE_DIR
 
 STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
+DIRS =[os.path.join(BASE_DIR,'static')]
